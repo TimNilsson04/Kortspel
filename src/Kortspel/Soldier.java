@@ -1,6 +1,11 @@
 package Kortspel;
 
-public class Soldier {
-    int hp = 150;
-    int dp = 10;
+public class Soldier extends Card {
+
+    public Soldier(String name, int hp, int dp) {
+        super(name, hp, dp);
+    }
+    public Soldier() {
+        super("Soldier", 150, 10);
+    }
 }

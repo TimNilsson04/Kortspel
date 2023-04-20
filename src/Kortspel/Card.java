@@ -1,5 +1,7 @@
 package Kortspel;
 
+import javax.swing.*;
+
 public class Card{
 
     String name;
@@ -28,14 +30,21 @@ public class Card{
                 '}';
     }
 
+    public String playAgainst(Card other){
+
+        return null;
+    }
+
     public Card(String name, int hp, int dp) {
         this.name = name;
         this.hp = hp;
         this.dp = dp;
 
+        JOptionPane.showInputDialog("Choose which card you want to play: \n Soldier \n Wizard \n Rogue \n Archer");
 
 
     }
+
 }
 
 
