@@ -21,6 +21,26 @@ public class Card{
         return dp;
     }
 
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void battle(Card enemy) {
+        if (this.getHp() > 0 && enemy.getHp() > 0) {
+            int dmg = this.getDp();
+            System.out.println(this.getName() + " Attacked " + enemy.getName() + " For " + dmg + " dmg");
+            enemy.setHp(enemy.getHp() - dmg);
+            if (enemy.getHp() < 0 && this.getHp() > 0) {
+                enemy.setHp(0);
+                System.out.println(this.getName() + " Died");
+
+            } else {
+                System.out.println("Next round");
+            }
+        }
+    }
+
+
     @Override
     public String toString() {
         return "Card{" +
@@ -30,19 +50,10 @@ public class Card{
                 '}';
     }
 
-    public String playAgainst(Card other){
-
-        return null;
-    }
-
     public Card(String name, int hp, int dp) {
         this.name = name;
         this.hp = hp;
         this.dp = dp;
-
-        JOptionPane.showInputDialog("Choose which card you want to play: \n Soldier \n Wizard \n Rogue \n Archer");
-
-
     }
 
 }
